@@ -1,0 +1,65 @@
+/* basic setting */
+:root {
+
+  --bg: #fff;
+
+  //menu、stepper與結帳、付款資訊、購物籃、購物籃商品名稱、運費、小計
+  --font-color-title: #2a2a2a;
+
+  //number、金額、運費項目、工作天數、上一步
+  --color-emphasize: #000000;
+
+  --color-white: #fff;
+
+  //表單預設內容
+  --font-color-placeholder: #999999;
+
+  //表單標籤
+  --font-color-label: #808080;
+
+  //disabled
+  --font-color-disabled: #afb1bd;
+
+  //footer
+  --footer-bg: #e5e5e5;
+
+  //underline bg-light-gray
+  --bg-light-gray: #f0f0f5;
+
+
+}
+
+$bg-color: var(--bg);
+$body-color:var(--font-color-title);
+$black: var(--color-emphasize);
+$text-gray: var(--font-color-label);
+$white: #ffffff;
+$dark: #333333;
+$main-pink: #f67599;
+$dark-gray: #4a4a4a;
+$secondary-gray: var(--font-color-placeholder);
+$light-gray: var(--font-color-disabled);
+$slight-gray: #f0f0f5;
+
+$colors: (bg-header-color: var(--bg),
+  bg-color: var(--bg),
+  body-color:var(--font-color-title),
+  bg-dark: var(--color-emphasize),
+  bg-light-gray: var(--bg-light-gray),
+  text-gray: var(--font-color-label),
+  white: var(--color-white),
+  dark: #333333,
+  button-next-active: #f67599,
+  button-next-font: var(--color-white),
+  button-prev-font: var(--color-emphasize),
+  dark-gray: #4a4a4a,
+  secondary-gray: var(--font-color-placeholder),
+  light-gray: var(--font-color-disabled),
+  slight-gray: var(--bg-light-gray),
+  footer-bg: var(--footer-bg),
+  footer-item-title: var(--font-color-title),
+  footer-item-content: var(--font-color-label));
+
+@function colors($color-var-name) {
+  @return map-get($colors, $color-var-name)
+}

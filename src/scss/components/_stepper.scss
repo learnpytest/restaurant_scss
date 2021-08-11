@@ -1,0 +1,136 @@
+.stepper-panel {
+  &__title {
+    @include font-setting(1.5rem, 700, colors(body-color));
+    line-height: 38px;
+  }
+
+  &__stepper-wrapper {
+    display: flex;
+    padding: 24px 0;
+    text-align: center;
+
+    .step {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      position: relative;
+      @include setStepNums(3);
+
+      &:first-child {
+        justify-content: flex-start;
+      }
+
+      &:last-child {
+        justify-content: flex-end;
+      }
+
+      .circle-container {
+        width: 32px;
+        height: 32px;
+        border: 1px solid $light-gray;
+        border-radius: 50%;
+        line-height: 32px;
+        @include font-setting(1rem, 700, $light-gray);
+      }
+
+      .connect-line {
+        display: block;
+        height: 1px;
+        position: absolute;
+        top: 16px;
+        background-color: colors(light-gray);
+        right: calc(50% + 48px);
+        left: calc(-100% + 64px);
+      }
+
+      &:last-child .connect-line {
+        right: 64px;
+        left: calc(-50% + 48px);
+      }
+
+      &.checked,
+      &.active {
+        .circle-container {
+          background-color: colors(bg-dark);
+          color: colors(bg-color);
+        }
+
+        .connect-line {
+          border: 2px solid colors(bg-dark);
+        }
+      }
+
+      &.checked {
+        .circle-container::after {
+          content: "\2714";
+          color: colors(bg-color);
+        }
+      }
+
+      &.active {
+        .circle-container {
+          background-color: colors(body-color);
+        }
+      }
+    }
+  }
+}
+
+
+// media query
+@include desktop {
+  %title-screen-style {
+    @include font-setting(2rem, 700, colors(body-color));
+  }
+
+  main .stepper-panel {
+    width: 37%;
+
+    &__title {
+      @extend %title-screen-style;
+    }
+
+    &__stepper-wrapper {
+
+      padding: 3em 0 4em 0;
+
+
+      .step {
+
+        @include display-setting(flex, center, center);
+        position: relative;
+        z-index: 1;
+
+        .circle-container {
+          background-color: #fff;
+          width: 1.5em;
+          height: 1.5em;
+          line-height: 1rem;
+          font-size: 0.75rem;
+        }
+
+        .label-container {
+          display: inline-block;
+          margin-left: 0.7rem;
+          @include font-setting(1rem, normal, colors(body-color));
+        }
+
+        .connect-line {
+          position: absolute;
+          top: 50%;
+          left: -20%;
+          right: 100%;
+          bottom: 0;
+          height: 2px;
+          z-index: -1;
+        }
+
+        &:last-child .connect-line {
+          left: -10%;
+          right: 90%;
+        }
+      }
+    }
+  }
+
+}

@@ -1,0 +1,188 @@
+//style start
+header.menu {
+  width: 100%;
+  height: 56px;
+  margin-bottom: 16px;
+  background-color: colors(bg-header-color);
+  color: color(body-color);
+
+  @include desktop {
+    //設定header.menu
+    height: 60px;
+    margin-bottom: 5em;
+    display: grid;
+    grid-template-columns: 10% minmax(384px, 1fr) auto minmax(27%, 1fr) 10%;
+  }
+
+  position: relative;
+  @include display-setting(flex, flex-start, center);
+
+  //漢堡排
+
+  .menu__navbar-toggle--hamburger-label {
+    position: absolute;
+    position: relative;
+    width: 20px;
+    height: 15px;
+    left: 5%;
+    z-index: 1;
+
+    .hamburger {
+      position: absolute;
+      top: 5px;
+      display: block;
+      width: 15px;
+      height: 2.5px;
+      background: colors(body-color);
+
+      &::before,
+      &::after {
+        background: colors(body-color);
+      }
+
+      &::before {
+        content: "";
+        width: 10px;
+        height: 2.5px;
+        position: absolute;
+        top: 5px;
+      }
+
+      &::after {
+        content: "";
+        width: 20px;
+        height: 2.5px;
+        position: absolute;
+        bottom: 5px;
+      }
+    }
+
+    @include desktop {
+      //移除漢堡排 
+      display: none;
+    }
+
+  }
+
+}
+
+//點擊漢堡排才會出現導覽列
+header {
+  input[type="checkbox"].menu__navbar-toggle--hamburger {
+    visibility: hidden;
+
+    //點擊漢堡排才會出現導覽列
+    &:checked {
+      ~nav {
+        transform: scale(1, 1);
+        transform: opacity 0.3s ease-out 0.2s;
+        opacity: 1;
+      }
+    }
+  }
+}
+
+
+//導覽列
+header nav {
+  width: 100%;
+  opacity: 0;
+  transition: transform 0.4s ease-out;
+  transform-origin: top;
+  transform: scale(1, 0);
+  @extend %nav-style-mobile;
+
+  //大螢幕
+  @include desktop {
+    //還原導覽列設定並重設grid
+    all: unset;
+    grid-column: 2 / 3;
+  }
+
+  ul {
+    @include display-setting(flex, center, center);
+    flex-direction: column;
+
+    li {
+      height: 72px;
+      width: 346px;
+      border-bottom: 1px solid rgba(42, 42, 42, 0.1);
+      @include display-setting(flex, center, center);
+    }
+
+    li:first-child {
+      height: 64px;
+    }
+
+    li:last-child {
+      border: none;
+      height: 48px;
+      align-items: flex-end;
+
+      img {
+        width: 152px;
+        height: 24px;
+      }
+    }
+
+
+    @include desktop {
+      all: unset;
+      margin-right: 84px;
+      height: 100%;
+      @include display-setting(grid, space-between, center);
+      grid-auto-flow: column;
+
+
+
+      li.nav-item {
+        all: unset;
+      }
+
+      li:last-child {
+        display: none;
+      }
+    }
+  }
+
+  a {
+    text-decoration: none;
+    @include font-setting(1rem, 500, colors(body-color));
+  }
+}
+
+//導覽列
+
+//商標
+header {
+  .site-logo-wrapper {
+    height: 24px;
+    width: 136px;
+    position: absolute;
+    top: 16px;
+    right: 50%;
+    transform: translateX(50%);
+  }
+
+  //商標
+
+  @include desktop {
+    //還原logo設定並重設grid
+    all: unset;
+    width: 170px;
+    grid-column: 3 / 4;
+
+  }
+}
+
+//右上角圖示
+.icons-wrapper {
+  @include desktop {
+    @include display-setting(grid, end, center);
+    grid-column: 4 / 5;
+
+    img {
+      width: 132px;
+    }
+  }
+}

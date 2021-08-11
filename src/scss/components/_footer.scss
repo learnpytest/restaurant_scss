@@ -1,0 +1,37 @@
+footer {
+  display: none;
+
+  @include desktop {
+
+    //footer樣式
+    height: 284px;
+    padding: 4em 10em;
+    background-color: colors(footer-bg);
+    display: grid;
+    grid-auto-flow: column;
+
+    //footer裡面的文字字型
+    @include font-style-footer;
+
+    //清除並重設site logo樣式
+    .site-logo-wrapper {
+      all: unset;
+      @include display-setting(grid, center, center);
+      grid-column: 1 / 2;
+      width: 175px;
+
+      img {
+        height: 31px;
+      }
+    }
+
+    ul {
+      @include display-setting(flex, flex-start, center);
+      flex-direction: column;
+
+      li:nth-child(1) {
+        margin-bottom: 1em;
+      }
+    }
+  }
+}

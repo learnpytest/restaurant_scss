@@ -1,0 +1,43 @@
+@import './abstracts/colors';
+@import './abstracts/fonts';
+@import './abstracts/reset';
+
+$desktop: 375px;
+
+@mixin desktop {
+  @media(min-width: #{$desktop}) {
+    @content
+  }
+}
+
+
+;
+
+
+// style start
+#main-app {
+  width: 100%;
+}
+
+#main-content {
+  width: 100%;
+  padding: 0 15px;
+  display: flex;
+  flex-direction: column;
+}
+
+@media screen and (min-width: 375px) {
+
+
+  #main-content {
+    padding: 0 10%;
+  }
+
+
+}
+
+@import './components/header';
+@import './components/footer';
+@import './components/button';
+@import './components/stepper';
+@import './components/form';

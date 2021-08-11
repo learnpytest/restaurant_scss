@@ -1,0 +1,24 @@
+@mixin font-setting($size, $weight, $color) {
+  font-size: $size;
+  font-weight: $weight;
+  color: $color;
+}
+
+@mixin font-style-footer {
+  li {
+    margin-bottom: 8px;
+  }
+
+  li a {
+    text-decoration: unset;
+    font-size: 1rem;
+    line-height: 1rem;
+    color: colors(footer-item-content);
+  }
+
+  li:nth-child(1) {
+    margin-bottom: 1.5em;
+    line-height: 1.5rem;
+    @include font-setting(1.5rem, 700, colors(footer-item-title));
+  }
+}

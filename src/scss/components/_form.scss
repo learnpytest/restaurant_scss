@@ -1,0 +1,335 @@
+.form-panel {
+  h2 {
+    margin-bottom: 1.5rem;
+  }
+
+  .form__content {
+    .form-group {
+      @include display-setting(flex, null, null);
+      flex-direction: column;
+      margin-bottom: 0.5em;
+
+      .form-row {
+        margin-bottom: 1em;
+
+        >label {
+          display: block;
+          margin-bottom: 0.5rem;
+          @include font-setting(0.75rem, 700, colors(text-gray));
+        }
+
+        input {
+          @extend %input-style;
+
+          &[type="radio"] {
+            -webkit-appearance: none;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            border-color: colors(body-color);
+            padding: 0;
+            margin: 0 20px 0 0;
+            cursor: pointer;
+
+            &:checked {
+              box-shadow: inset 0 0 0 6px colors(body-color);
+            }
+
+            ~label {
+              margin: 0;
+              width: 100%;
+              position: relative;
+              @include display-setting(flex, space-between, center);
+              @include font-setting(14px, 400, colors(bg-dark));
+
+              .tr-method__label__main {
+
+                @include display-setting(flex, center, null);
+                flex-direction: column;
+
+                .tr-method-time {
+                  font-size: 12px;
+                }
+              }
+
+
+            }
+          }
+        }
+
+        .select-wrapper {
+          position: relative;
+          z-index: 0;
+
+          //下拉選單三角形
+          &::after {
+            content: "";
+            border-style: solid;
+            border-width: 5px 4.5px 0 4.5px;
+            border-color: colors(body-color) transparent transparent transparent;
+            position: absolute;
+            top: 50%;
+            right: 18px;
+            transform: translateY(-50%);
+            z-index: -1;
+          }
+
+        }
+
+        select {
+          -webkit-appearance: none;
+          @extend %input-style;
+          cursor: pointer;
+          background-color: transparent;
+          // 下拉選單的內容在選擇後的改成醒目字型樣式
+        }
+      }
+    }
+
+    //寄送地址、運送方式、付款資訊
+    .part__title {
+      margin-bottom: 1.5em;
+      @include font-setting(1.5rem, 700, colors(body-color));
+    }
+
+    &__part-address {
+      .form-group:nth-child(2) {
+        flex-direction: row;
+
+        .form-row {
+          flex: 1;
+        }
+
+        .form-row:first-child {
+          flex: 0 0 38%;
+          margin-right: 30px;
+        }
+      }
+    }
+
+    //運送方式
+    &__part-shipment {
+      height: 192px;
+      margin-bottom: 1em;
+
+
+      .form-row {
+        padding: 0 0.5em;
+
+        &:hover {
+          border: 1px solid colors(body-color);
+          border-radius: 4px;
+        }
+
+        height: 4em;
+        margin-bottom: 1.5em;
+        padding: 0 2em 0 1.52m;
+
+      }
+    }
+
+    //付款資訊
+    &__part-payment {
+      .form-group:last-child {
+        flex-direction: row;
+
+        .form-row {
+          flex: 1 1 50%;
+        }
+
+        .form-row:last-child {
+          margin-left: 30px;
+        }
+      }
+    }
+  }
+
+
+  //購物籃
+  .form__chart {
+    height: 35%;
+
+    &__goods-list {
+      //  購物籃中的物品列表與物品中間保留空間
+      flex: 1;
+      padding: 1.25em 1em 1em 1em;
+
+      &__item {
+        height: 102px;
+        margin-bottom: 1em;
+        display: flex;
+
+        img {
+          width: 100px;
+        }
+
+        &__content {
+          // background-color: #ccc;
+          flex: 1;
+          text-align: end;
+          position: relative;
+
+          .flex-wrapper {
+            height: calc(100% - 20px);
+            color: colors(body-color);
+            font-size: 1rem;
+
+            .good-name {
+              line-height: 1.5rem;
+            }
+
+            .good-count {
+              float: right;
+              margin-top: 1em;
+
+              width: 50%;
+              @include display-setting(flex, space-around, center);
+              height: 27px;
+              line-height: 27px;
+              text-align: center;
+
+              .good-minus,
+              .good-plus {
+                width: 20%;
+                background-color: #e6e6eb;
+                border-radius: 50%;
+                color: colors(dark);
+              }
+            }
+          }
+
+          .good-price {
+            height: 1.5rem;
+            @include font-setting(null, 700, colors(bg-dark));
+          }
+        }
+      }
+    }
+
+    .flex-wrapper-shipment {
+      height: 105px;
+      padding: 0 19px 0 16px;
+      border-top: 1px solid #f0f0f5;
+      @include display-setting(flex, space-between, space-between);
+      flex-direction: column;
+      @include font-setting(0.9rem, 700, colors(bg-dark));
+
+      .item {
+        color: colors(body-color);
+      }
+
+      .shipment-fee,
+      .shipment-sum {
+        border-bottom: 1px solid colors(bg-light-gray);
+        flex: 0 0 50%;
+      }
+    }
+  }
+
+}
+
+.form-panel {
+  @include desktop {
+    height: 530px;
+
+    form {
+
+      //讓按鈕與購物籃相對對齊可以在適當的相對位置出現
+      position: relative;
+
+      .form__wrapper__content {
+        display: flex;
+        position: relative;
+
+        .form__content {
+          height: 288px;
+          width: 38%;
+          margin-right: 9%;
+
+          &__part-address {
+            .form-group {
+              flex-direction: row;
+
+              .form-row {
+                flex: 1;
+                margin-bottom: 0;
+              }
+
+              .form-row:first-child {
+                margin-right: 2em;
+              }
+            }
+
+            .form-group:nth-child(2),
+            .form-group:last-child {
+              .form-row:first-child {
+                flex: 0 0 30%;
+              }
+            }
+          }
+
+          &__part-payment {
+
+            .form-group:nth-child(2) {
+              flex-direction: row;
+              flex-wrap: wrap;
+
+              .form-row {
+                flex: 1 1 100%;
+                margin-bottom: 0.5em;
+              }
+            }
+          }
+        }
+
+        .form__chart {
+          height: 44%;
+          flex: 1;
+          padding: 2em 1.5em;
+          transform: translateY(-86px);
+
+          &__title {
+            display: block;
+            @include font-setting(18px, 700, colors(body-color));
+          }
+
+          .form__chart__goods-list {
+
+            padding: 0;
+            margin-top: 2em;
+
+            &__item {
+              margin-bottom: 2em;
+
+              &__content {
+                // background-color: black;
+                margin-left: 21px;
+                @include display-setting(flex, space-between, flex-start);
+                flex-direction: row;
+
+                .flex-wrapper {
+                  height: 100%;
+                  position: relative;
+
+                  .good-count {
+
+                    width: 80%;
+                    left: 0;
+                    top: 50%;
+                    transform: translateY(-50%);
+                  }
+                }
+
+                .good-price {
+                  text-align: end;
+                }
+              }
+            }
+          }
+        }
+      }
+
+    }
+
+  }
+}

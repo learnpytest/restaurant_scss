@@ -1,0 +1,67 @@
+//手機
+.form__button-control {
+  height: 70px;
+  width: 100%;
+  @include display-setting(flex, center, flex-end);
+
+  margin: 2em 0 2.5em 0;
+  border-top: 1px solid #e6e6eb;
+
+  .btn {
+    height: 3rem;
+    flex: 1;
+    cursor: pointer;
+  }
+
+  &__button--primary {
+    background-color: colors(button-next-active);
+    border-radius: 8px;
+
+    // 字型
+    @include font-setting(0.75rem, 500, colors(button-next-font));
+
+    &::after {
+      content: "\2192";
+      font-size: 1.25rem;
+      margin-left: 13px;
+    }
+
+    &.last-step {
+
+      //     在最後一步將按鈕改成確認下單以後必須要移除偽元素
+      &::after {
+        content: "";
+      }
+    }
+  }
+
+  &__button--outline {
+    color: colors(button-prev-font);
+    text-align: start;
+
+    &::before {
+      content: "\2190";
+      margin-right: 12px;
+      margin-left: 13px;
+      font-size: 1.25rem;
+    }
+  }
+
+  //大螢幕
+  @include desktop {
+    width: 38%;
+    margin-bottom: 48px;
+    justify-content: space-between;
+    //讓按鈕固定在適當相對位置
+    position: absolute;
+    bottom: 84px;
+
+    .btn {
+      flex: 0 0 50%;
+    }
+
+    &.display-one-btn {
+      justify-content: flex-end;
+    }
+  }
+}

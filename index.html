@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+  <title>Alpha Shop</title>
+  <link rel="stylesheet"
+        href="dist/main.css">
+</head>
+
+<body>
+  <div id="main-app">
+    <header class="menu">
+      <!--  漢堡排與導覽列    -->
+      <label for="menu__navbar-toggle--hamburger"
+             class="menu__navbar-toggle--hamburger-label">
+        <span class="hamburger"></span>
+      </label>
+      <input type="checkbox"
+             id="menu__navbar-toggle--hamburger"
+             class="navbar-toggle menu__navbar-toggle--hamburger"
+             id="navbar-toggle" />
+      <nav class="nav">
+        <ul class="nav-list">
+          <li class="nav-item">
+            <a class="nav-link"
+               href="#activity">男款</a>
+          </li>
+          <li class="nav-item"><a class="nav-link"
+               href="#album">女款</a></li>
+          <li class="nav-item">
+            <a class="nav-link"
+               href="#adoption">最新消息</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link"
+               href="#adoption">聯絡我們</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link"
+               href="#adoption">客製商品</a>
+          </li>
+          <li class="nav-item">
+            <img src="https://i.imgur.com/CS5KYje.png"
+                 alt="menu-icons">
+          </li>
+        </ul>
+      </nav>
+      <!--  漢堡排與導覽列    -->
+      <div class="site-logo-wrapper">
+        <img class="site-logo"
+             src="https://i.imgur.com/gvRKoTR.png"
+             alt="">
+      </div>
+      <div class="icons-wrapper d-none">
+        <img src="https://i.imgur.com/CS5KYje.png"
+             alt="menu-icons">
+      </div>
+    </header>
+
+    <main id="main-content">
+      <div id="stepper-control"
+           class="panel stepper-panel">
+        <div class="stepper-panel__title">結帳</div>
+        <div class="wrapper stepper-panel__stepper-wrapper justify-content-between">
+          <div class="step active">
+            <div class="circle-container"></div><label class="label-container d-none">寄送地址</label>
+          </div>
+          <div class="step">
+            <div class="circle-container"></div><label class="label-container d-none">運送方式</label>
+            <span class="connect-line"></span>
+          </div>
+          <div class="step">
+            <div class="circle-container"></div><label class="label-container d-none">付款資訊</label>
+            <span class="connect-line"></span>
+
+          </div>
+        </div>
+      </div>
+      <div class="panel form-panel">
+        <div class="wrapper form-wrapper">
+          <form id="form-control"
+                action="">
+            <div class="form__wrapper__content">
+              <div class="form__content">
+                <div class="part form__content__part-address">
+                  <div class="part__title">寄送地址</div>
+                  <div class="form-group">
+                    <div class="form-row"><label>稱謂</label>
+                      <div class="select-wrapper">
+                        <select name="a-title"
+                                id="a-title"
+                                required>
+                          <option value="mr"
+                                  selected>先生</option>
+                          <option value="ms">女士</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="form-row">
+                      <label for="a-name">姓名</label>
+                      <input id="a-name"
+                             class="a-name"
+                             type="text"
+                             placeholder="請輸入姓名">
+                    </div>
+                  </div>
+                  <div class="form-group">
+
+                    <div class="form-row">
+                      <label for="a-phone">電話</label>
+                      <input id="a-phone"
+                             class="a-phone"
+                             type="text"
+                             placeholder="請輸入行動電話">
+                    </div>
+                    <div class="form-row">
+                      <label for="a-email">Email</label>
+                      <input id="a-email"
+                             class="a-email"
+                             type="email"
+                             placeholder="請輸入電子郵件">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <div class="form-row"><label>縣市</label>
+                      <div class="select-wrapper">
+                        <select name="a-city"
+                                id="a-city"
+                                required>
+                          <option value="game"
+                                  disabled
+                                  selected>請選擇縣市</option>
+
+                          <option value="taipei"
+                                  selected>台北</option>
+                          <option value="newtaipei">新北</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="form-row">
+                      <label for="a-address">地址</label>
+                      <input id="a-address"
+                             class="a-address"
+                             type="text"
+                             placeholder="請輸入地址">
+                    </div>
+                  </div>
+                </div>
+                <div class="part form__content__part-shipment d-none">
+                  <div class="part__title">運送方式</div>
+                  <div id="tr-methods"
+                       class="form-group">
+                    <div class="form-row d-flex align-items-center">
+                      <input name="tr-method"
+                             type="radio"
+                             value="standard" />
+                      <label for="">
+                        <div class="tr-method__label__main">
+                          <div class="tr-method-label">標準運送</div>
+                          <div class="tr-method-time">約3~7個工作天</div>
+                        </div>
+                        <div class="tr-method__label__right">免費</div>
+                      </label>
+                    </div>
+                    <div class="form-row d-flex  align-items-center">
+                      <input name="tr-method"
+                             type="radio"
+                             value="dhl" /> <label for="">
+                        <div class="tr-method__label__main">
+                          <div class="tr-method-label"
+                               style="font-weight:700">DHL貨運</div>
+                          <div class="tr-method-time">48小時內送達</div>
+                        </div>
+                        <div class="tr-method__label__right">$500</div>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+                <div class="part form__content__part-payment d-none">
+                  <div class="part__title">付款資訊</div>
+                  <div class="form-group">
+                    <div class="form-row">
+                      <label for="cardholder-name">持卡人姓名</label>
+                      <input id="cardholder-name"
+                             class="cardholder-name"
+                             type="text"
+                             placeholder="John Doe">
+
+                    </div>
+                    <div class="form-row">
+                      <label for="credit-card">卡號</label>
+                      <input id="credit-card"
+                             class="credit-card"
+                             type="text"
+                             placeholder="1111 2222 3333 4444">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <div class="form-row">
+                      <label>有效期限</label><input id="expire-date"
+                             name="expire-date"
+                             type="text"
+                             placeholder="MM/YY"
+                             value=""
+                             required>
+                    </div>
+                    <div class="form-row">
+                      <label for="a-address">CVC / CCV</label>
+                      <input id="cvc-ccv"
+                             class="cvc-ccv"
+                             type="text"
+                             placeholder="123">
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="form__chart">
+                <div class="form__chart__title d-none">購物籃</div>
+                <div id="chart-goods-list"
+                     class="form__chart__goods-list">
+                  <!-- 迴圈產生購物籃商品 -->
+
+                </div>
+                <div class="flex-wrapper-shipment">
+                  <div class="shipment-fee d-flex align-items-center justify-content-between"><span
+                          class="item">運費</span><span id="ship-fee">免費</span></div>
+                  <div class="shipment-sum d-flex align-items-center justify-content-between"><span
+                          class="item">小計</span><span id="good-sum">$5,298</span></div>
+                </div>
+              </div>
+            </div>
+            <div id="form__button-control"
+                 class="form__button-control  display-one-btn">
+              <button class="d-none btn form__button-control__button--outline">
+                上一步
+              </button>
+              <button class="btn form__button-control__button--primary">
+                下一步
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </main>
+    <footer id="site-footer"
+            class="site-footer">
+      <div class="site-logo-wrapper">
+        <img class="site-logo"
+             src="https://i.imgur.com/gvRKoTR.png"
+             alt="">
+      </div>
+      <ul class="nav-list nav-list-services">
+        <li class="nav-item nav-list-services__item--title">
+          <div class="nav-link"
+               href="#activity">客戶服務</div>
+        </li>
+        <li class="nav-item nav-list-services__item--option"><a class="nav-link"
+             href="#album">運送說明</a></li>
+        <li class="nav-item nav-list-services__item--option">
+          <a class="nav-link"
+             href="#adoption">退換貨相關</a>
+        </li>
+        <li class="nav-item nav-list-services__item--option">
+          <a class="nav-link"
+             href="#adoption">付款資訊</a>
+        </li>
+        <li class="nav-item nav-list-services__item--option">
+          <a class="nav-link"
+             href="#adoption">FAQ</a>
+        </li>
+      </ul>
+      <ul class="nav-list nav-list-about">
+        <li class="nav-item nav-list-about__item--title">
+          <div class="nav-link"
+               href="#activity">關於我們</div>
+        </li>
+        <li class="nav-item nav-list-about__item--option"><a class="nav-link"
+             href="#album">品牌故事</a></li>
+        <li class="nav-item nav-list-about__item--option">
+          <a class="nav-link"
+             href="#adoption">媒體聯繫</a>
+        </li>
+        <li class="nav-item nav-list-about__item--option">
+          <a class="nav-link"
+             href="#adoption">Press kit</a>
+        </li>
+      </ul>
+      <ul class="nav-list nav-list-info">
+        <li class="nav-item nav-list-info__item--title">
+          <div class="nav-link"
+               href="#activity">資訊</div>
+        </li>
+        <li class="nav-item nav-list-info__item--option"><a class="nav-link"
+             href="#album">隱私權政策</a></li>
+        <li class="nav-item nav-list-info__item--option">
+          <a class="nav-link"
+             href="#adoption">Cookie</a>
+        </li>
+        <li class="nav-item nav-list-info__item--option">
+          <a class="nav-link"
+             href="#adoption">GDPR</a>
+        </li>
+      </ul>
+      <ul class="nav-list nav-list-contact">
+        <li class="nav-item nav-list-contact__item--title">
+          <div class="nav-link"
+               href="#activity">追蹤 ALPHA Shop</div>
+        </li>
+        <li class="nav-item nav-list-contact__item--option"><a class="nav-link"
+             href="#album">+886 02123-45678</a></li>
+        <li class="nav-item nav-list-contact__item--option">
+          <img src=""
+               alt="">
+        </li>
+      </ul>
+    </footer>
+  </div>
+  <script src="dist/bundle.js"></script>
+</body>
+
+</html>
