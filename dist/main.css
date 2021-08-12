@@ -92,7 +92,7 @@ input:invalid {
 header nav {
   position: absolute;
   top: 56px;
-  background-color: #ffffff;
+  background-color: var(--bg);
   z-index: 99;
   height: 611px;
   font-size: 1rem;
@@ -106,7 +106,7 @@ html {
 
 body {
   height: 100%;
-  background: #ffffff;
+  background: var(--bg);
   color: var(--font-color-title); }
 
 .d-none {
@@ -171,19 +171,6 @@ body {
 
 .cursor-pointer {
   cursor: pointer; }
-
-#main-app {
-  width: 100%; }
-
-#main-content {
-  width: 100%;
-  padding: 0 15px;
-  display: flex;
-  flex-direction: column; }
-
-@media screen and (min-width: 375px) {
-  #main-content {
-    padding: 0 10%; } }
 
 header.menu {
   width: 100%;
@@ -445,7 +432,8 @@ footer {
       background-color: var(--color-emphasize);
       color: var(--bg); }
     .stepper-panel__stepper-wrapper .step.checked .connect-line, .stepper-panel__stepper-wrapper .step.active .connect-line {
-      border: 2px solid var(--color-emphasize); }
+      border: 2px solid var(--color-emphasize);
+      background: var(--color-emphasize); }
     .stepper-panel__stepper-wrapper .step.checked .circle-container::after {
       content: "\2714";
       color: var(--bg); }
@@ -693,6 +681,7 @@ footer {
                 align-items: flex-start;
                 flex-direction: row; }
                 .form-panel form .form__wrapper__content .form__chart .form__chart__goods-list__item__content .flex-wrapper {
+                  width: 50%;
                   height: 100%;
                   position: relative; }
                   .form-panel form .form__wrapper__content .form__chart .form__chart__goods-list__item__content .flex-wrapper .good-count {
@@ -702,4 +691,17 @@ footer {
                     transform: translateY(-50%); }
                 .form-panel form .form__wrapper__content .form__chart .form__chart__goods-list__item__content .good-price {
                   text-align: end; } }
+
+#main-app {
+  width: 100%; }
+
+#main-content {
+  width: 100%;
+  padding: 0 15px;
+  display: flex;
+  flex-direction: column; }
+
+@media screen and (min-width: 375px) {
+  #main-content {
+    padding: 0 10%; } }
 

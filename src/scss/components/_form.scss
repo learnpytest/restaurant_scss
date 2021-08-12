@@ -164,12 +164,14 @@
         }
 
         &__content {
-          // background-color: #ccc;
+
+
           flex: 1;
           text-align: end;
           position: relative;
 
           .flex-wrapper {
+
             height: calc(100% - 20px);
             color: colors(body-color);
             font-size: 1rem;
@@ -308,6 +310,7 @@
                 flex-direction: row;
 
                 .flex-wrapper {
+                  width: 50%;
                   height: 100%;
                   position: relative;
 

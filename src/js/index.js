@@ -197,22 +197,6 @@ function setBtnDisabled() {
 formBtnControl.addEventListener("click", handleformBtnControlClicked);
 
 
-// 要刪除
-// const r = document.querySelector('.test')
-// function myFunction_get() {
-//   // Get the styles (properties and values) for the root
-//   var rs = getComputedStyle(r);
-//   // Alert the value of the --blue variable
-//   alert("The value of --blue is: " + rs.getPropertyValue('--bg'));
-// }
-
-// // Create a function for setting a variable value
-// function myFunction_set() {
-//   // Set the value of variable --blue to another value (in this case "lightblue")
-//   r.style.setProperty('--bg', 'blue');
-// }
-// myFunction_get()
-// myFunction_set()
 
 generateChartGoods()
 

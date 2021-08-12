@@ -1,7 +1,3 @@
-@import './abstracts/colors';
-@import './abstracts/fonts';
-@import './abstracts/reset';
-
 $desktop: 375px;
 
 @mixin desktop {
@@ -9,6 +5,16 @@ $desktop: 375px;
     @content
   }
 }
+
+@import './abstracts/colors';
+@import './abstracts/fonts';
+@import './abstracts/reset';
+@import './components/header';
+@import './components/footer';
+@import './components/button';
+@import './components/stepper';
+@import './components/form';
+
 
 
 ;
@@ -35,9 +41,3 @@ $desktop: 375px;
 
 
 }
-
-@import './components/header';
-@import './components/footer';
-@import './components/button';
-@import './components/stepper';
-@import './components/form';
